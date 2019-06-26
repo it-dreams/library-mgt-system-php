@@ -1,3 +1,7 @@
+<?php
+    include_once "../config.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Student Login Form | LMS </title>
+    <title>Librarian Login Form | LMS </title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -30,7 +34,7 @@
 
     <section class="login_content">
         <form name="form1" action="" method="post">
-            <h1>User Login Form</h1>
+            <h1>Librarian Login Form</h1>
 
             <div>
                 <input type="text" name="username" class="form-control" placeholder="Username" required=""/>
@@ -58,12 +62,34 @@
             </div>
         </form>
     </section>
+    
+    <?php
+     if(isset($_POST["submit1"]))
+     {
+        $count = 0;
+        $res = mysqli_query($link, "select * from librarian_registration where username = '$_POST[username]' && password = '$_POST[password]' ");
 
+        $count = mysqli_num_rows($res);
 
-</div>
+        if($count == 0)
+        { ?>
 
-<div class="alert alert-danger col-lg-6 col-lg-push-3">
-    <strong style="color:white">Invalid</strong> Username Or Password.
+            <div class="alert alert-danger col-lg-6 col-lg-push-3">
+                <strong style="color:white">Invalid</strong> Username Or Password.
+            </div>
+
+        <?php    
+        } else { ?>
+            
+            <script>
+                window.location = "plain_page.php";
+            </script>
+
+        <?php
+        }
+     }
+    ?>
+
 </div>
 
 
