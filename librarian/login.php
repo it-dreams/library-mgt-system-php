@@ -82,7 +82,7 @@
         } else { ?>
             
             <script>
-                window.location = "plain_page.php";
+                window.location = "student_display_info.php";
             </script>
 
         <?php
