@@ -63,8 +63,13 @@
                                 echo "<td>"; echo $row["sem"]; echo "</td>";
                                 echo "<td>"; echo $row["enrolmant"]; echo "</td>";
                                 echo "<td>"; echo $row["status"]; echo "</td>";
-                                echo "<td>"; ?> <a href="approve.php?id= <?php echo $row['id']; ?>">Approve</a> <?php echo "</td>";
-                                echo "<td>"; ?> <a href="notapprove.php?id= <?php echo $row['id']; ?>">Not Approve</a> <?php echo "</td>";
+                                echo "<td>"; ?> 
+                                  <a href="approve.php?id= <?php echo $row['id']; ?>">Approve</a> 
+                                <?php echo "</td>";
+                                
+                                echo "<td>"; ?> 
+                                  <a href="notapprove.php?id= <?php echo $row['id']; ?>">Not Approve</a> 
+                                <?php echo "</td>";
                                 echo "<tr>";
                               }
                               echo "</table>";
